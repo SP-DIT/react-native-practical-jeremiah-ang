@@ -2,13 +2,13 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import TwitterFeed from './components/TwitterFeed';
+import Constants from 'expo-constants';
 
 export default function App() {
     const [tweets, setTweets] = React.useState([]);
     const [newTweet, setNewTweet] = React.useState('');
     return (
         <View style={styles.container}>
-            <StatusBar style="auto" />
             <TwitterFeed tweets={tweets} />
             <View>
                 <TextInput
@@ -40,12 +40,14 @@ export default function App() {
                     title={'Add Tweet'}
                 />
             </View>
+            <StatusBar style="auto" />
         </View>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
+        paddingTop: Constants.statusBarHeight,
         flex: 1,
         backgroundColor: '#fff',
         alignItems: 'center',
