@@ -6,9 +6,10 @@ export default function Tweet(props) {
     return (
         <View style={{ flexDirection: 'row', gap: 5, marginBottom: 5 }}>
             <View>
-                <View style={{ borderRadius: '50%', overflow: 'hidden' }}>
+                <View style={{ overflow: 'hidden' }}>
                     <Image
                         style={{
+                            borderRadius: 25,
                             width: 50,
                             height: 50,
                         }}
